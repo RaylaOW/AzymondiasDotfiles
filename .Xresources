@@ -1,0 +1,34 @@
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+
+foreground #ffffff
+background #452e42
+cursorColor #ffffff
+
+*color0: #dbeced
+*color1: #f6acf7
+*color2: #efb2d3
+*color3: #fac3e3
+*color4: #e1c4e0
+*color5: #f8b49d
+*color6: #e98271
+*color7: #ffffff
+*color8: #dbeced
+*color9: #f6acf7
+*color10: #efb2d3
+*color11: #fac3e3
+*color12: #e1c4e0
+*color13: #f8b49d
+*color14: #e98271
+*color15: #ffffff
+
+*color16: #f386a1
+*color17: #b06110
+*color18: #1c3f95
+*color19: #5a5758
+*color20: #959ca1
+*color21: #e7e7e8
