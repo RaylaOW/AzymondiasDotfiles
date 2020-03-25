@@ -16,7 +16,8 @@ You will need a few from the AUR using whatever AUR helper you want.  I use yay:
 ```bash
 yay i3-gaps-rounded spotify spicetify system-san-francisco-font-git nerd-fonts-complete adobe-source-code-pro-fonts noto-fonts
 ```
-
+## Screen Shots
+![alt text](https://raw.githubusercontent.com/RaylaOW/AzymondiasDotfiles/master/2020-03-24-220707_2560x1440_scrot.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
