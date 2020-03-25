@@ -14,7 +14,7 @@ sudo pacman -S feh picom neofetch dunst kitty polybar rofi
 You will need a few from the AUR using whatever AUR helper you want.  I use yay:
 
 ```bash
-yay i3-gaps-rounded spotify spicetify system-san-francisco-font-git nerd-fonts-complete
+yay i3-gaps-rounded spotify spicetify system-san-francisco-font-git nerd-fonts-complete adobe-source-code-pro-fonts noto-fonts
 ```
 
 
