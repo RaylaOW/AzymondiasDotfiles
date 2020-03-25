@@ -18,6 +18,8 @@ yay i3-gaps-rounded spotify spicetify system-san-francisco-font-git nerd-fonts-c
 ```
 ## Screen Shots
 ![alt text](https://raw.githubusercontent.com/RaylaOW/AzymondiasDotfiles/master/2020-03-24-220707_2560x1440_scrot.png)
+![alt text](https://raw.githubusercontent.com/RaylaOW/AzymondiasDotfiles/master/2020-03-24-220737_2560x1440_scrot.png)
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
