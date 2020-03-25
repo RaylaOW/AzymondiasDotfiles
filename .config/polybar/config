@@ -1,0 +1,594 @@
+;=========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+
+;
+;This is a work in progress and unused content is left in temporarily while working on making this uniform across multiple devices
+;
+
+
+[colors]
+background = 452e42
+background-alt = 
+foreground = ffffff
+foreground-alt = e1c4e0
+
+red = e98271
+
+
+primary = e98271
+secondary = e1c4e0
+alert = f6acf7
+
+;------------;
+;  TOPLEFT   ;
+;------------;
+
+[bar/TopLeft]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+
+; DIMENSIONS ;
+
+width = 15%
+height = 35
+offset-y = 0
+offset-x = 0
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 8
+
+; LOCATION ;
+
+bottom = false
+
+; FONTS ;
+
+font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;2"
+
+; MISCELLANEOUS ;
+
+radius = 6.0
+background = ${colors.background}
+fixed-center = false
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = powermenu 
+modules-right = i3 
+
+wm-restack = i3
+override-redirect = true
+
+;------------;
+; TOPCENTER  ;
+;------------;
+
+[bar/TopCenter]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+background = ${colors.background}
+
+; DIMENSIONS ;
+
+width = 7.5%
+height = 35
+offset-y = 0
+offset-x = 15%:8
+;offset is 640 * (1 - 0.width) 
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+; LOCATION ;
+
+bottom = false
+
+; FONTS ;
+
+font-0 = "SFNS Display:style=Regular:size=11:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=10;2"
+
+; MISCELLANEOUS ;
+
+radius = 6.0
+fixed-center = true
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+
+modules-center= time-date
+
+tray-position = none
+tray-padding =2 
+
+wm-restack = i3
+override-redirect = true
+
+;------------;
+;  Spotify   ;
+;------------;
+
+[bar/Spotify]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+
+; DIMENSIONS ;
+
+width = 20%
+height = 35
+offset-y = 0
+offset-x = 22.5%:8
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 8
+
+; LOCATION ;
+
+bottom = false
+
+; FONTS ;
+
+font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;2"
+
+; MISCELLANEOUS ;
+
+radius = 6.0
+background = ${colors.background}
+fixed-center = false
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+
+modules-center = spotify
+
+override-redirect = true
+
+
+;------------;
+;  TOPRIGHT  ;
+;------------;
+
+[bar/TopRight]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+
+override-redirect = true
+
+; DIMENSIONS ;
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+width = 20%
+height = 35
+offset-y = 0
+offset-x = 50%
+;offset is 1280*(1-0.width)
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 8
+border-left-size = 0
+
+; LOCATION ;
+
+bottom = false
+
+; FONTS ;
+
+font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;2"
+
+; MISCELLANEOUS ;
+
+radius = 6.0
+fixed-center = false
+padding-left = 3
+padding-right = 2
+background = ${colors.background}
+
+module-margin-left = 2
+module-margin-right = 0
+
+;add wlan to left for wifi
+modules-left = eth
+;modules-right = battery
+
+tray-position = none
+tray-padding =2 
+
+wm-restack = i3
+
+
+
+
+
+
+
+;---------;
+; MODULES ;
+;---------;
+
+[module/spotify]
+type = custom/script
+interval = 5
+format-prefix = " "
+format = <label>
+exec = python $HOME/.config/polybar/spotify.py
+format-underline = 
+format-foreground = ${colors.foreground}
+
+
+
+[module/xwindow]
+type = internal/xwindow
+;label = %title:0:30:...%
+format-foreground = ${colors.foreground}
+label = %title%
+label-maxlen = 80
+label-empty =
+
+
+
+[module/i3]
+type = internal/i3
+format = <label-state>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;
+;ws-icon-default = 
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 0
+label-mode-foreground = ${colors.primary}
+label-mode-background =
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = 
+label-focused-foreground = ${colors.foreground}
+;label-focused-underline = ${colors.foreground}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.foreground-alt}
+;label-unfocused-underline =
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+;label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+
+
+[module/i3menu]
+type = internal/i3
+format = <label-mode>
+
+label-mode-foreground = ${colors.alert}
+
+
+
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <ramp> <label> <bar>
+
+ramp-0 = 🔅
+ramp-1 = 🔅
+ramp-2 = 🔆
+ramp-3 = 🔆
+ramp-4 = 🔆
+
+label = "%percentage%%"
+label-foreground = ${colors.foreground}
+
+bar-width = 20
+bar-indicator = 
+bar-indicator-foreground = ${colors.foreground}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.primary_dark}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground}
+enable-scroll = true
+
+
+
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/xbacklight
+card = nvidia_backlight 
+
+
+
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 5.0
+
+format-connected-prefix = "  "
+format-connected = <label-connected>
+format-connected-foreground = ${colors.foreground}
+label-connected = %essid%
+label-connected-foreground = ${colors.foreground}
+
+format-disconnected =
+
+
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 5.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
+label-connected = " "
+
+format-disconnected =
+
+
+
+
+[module/date]
+type = internal/date
+interval = 300
+
+date = "%m/%d/%Y"
+
+format-prefix = " "
+format-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground}
+
+label = %date%
+
+
+
+[module/time]
+type = internal/date
+interval=1
+
+date =
+time = "%H:%M:%S"
+
+format-prefix = " "
+label = %time%
+
+format-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground}
+
+
+
+[module/time-date]
+type = internal/date
+interval = 1
+
+date = " %H:%M:%S  "
+date-alt = " %m/%d/%y  "
+
+time = " " 
+time-alt =  " "
+label = %date% %time%
+
+format-date-foreground = ${colors.foreground}
+format-time-foreground = ${colors.background-alt}
+
+
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+use-ui-max = true
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+ramp-volume-7 = 
+ramp-volume-8 = 
+ramp-volume-9 = 
+ramp-volume-10 = 
+ramp-volume-11 = 
+
+
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground}
+
+label-muted =  muted
+label-muted-foreground = #8a8381
+
+bar-volume-width = 20
+bar-volume-foreground-0 = ${colors.primary_dark}
+;2587bd
+;bar-volume-foreground-0 = #59ff55
+;bar-volume-foreground-1 = #59ff55
+;bar-volume-foreground-2 = #59ff55
+;bar-volume-foreground-3 = #59ff55
+;bar-volume-foreground-4 = #59ff55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 3
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+
+
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+;format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = "   "
+;format-full = <ramp-capacity>
+format-full-prefix-foreground = ${colors.foreground}
+;format-full-underline = ${self.format-charging-underline}
+format-full-foreground = ${colors.foreground}
+ramp-capacity-0 = ▂
+ramp-capacity-1 = ▂▆
+ramp-capacity-2 = ▂▆▉	
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 60
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 600
+
+
+
+
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = ""
+label-open-foreground = ${colors.foreground}
+label-close =  " "
+label-close-foreground = ${colors.red}
+label-separator = " "
+label-separator-foreground = 
+
+menu-0-0 = 
+menu-0-0-foreground = ${colors.foreground}
+menu-0-0-exec = i3-nagbar -m 'Do you want to power off your system?' -B '' 'poweroff' -t warning 
+menu-0-1 = 
+menu-0-1-foreground = ${colors.foreground}
+menu-0-1-exec = i3-nagbar -m 'Do you want to reboot your system?' -B '' 'systemctl reboot' -t warning
+
+
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
